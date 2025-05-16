@@ -25,8 +25,8 @@ class SynthesisMainLayer(tf.keras.layers.Layer):
         
     def build(self, input_shape):
         
-        self.noise_strength = self.add_weight(name=self.l_name+'/noise_strength', shape=[], initializer=tf.initializers.zeros(), trainable=True)
-        self.bias = self.add_weight(name=self.l_name+'/bias', shape=(self.fmaps,), initializer=tf.random_normal_initializer(0,1), trainable=True)
+        self.noise_strength = self.add_weight(name=self.l_name+'_noise_strength', shape=[], initializer=tf.initializers.zeros(), trainable=True)
+        self.bias = self.add_weight(name=self.l_name+'_bias', shape=(self.fmaps,), initializer=tf.random_normal_initializer(0,1), trainable=True)
         
         self.mod_conv2d_layer = ModulatedConv2DLayer(fmaps=self.fmaps, kernel=self.kernel, 
                                                 up=self.up, resample_kernel=self.resample_kernel,
