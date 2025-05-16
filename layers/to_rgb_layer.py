@@ -18,7 +18,7 @@ class ToRgbLayer(tf.keras.layers.Layer):
         self.mod_conv2d_rgb = ModulatedConv2DLayer(fmaps=3, kernel=1, demodulate=False, 
                                               impl=self.impl, gpu=self.gpu, name='ToRGB')
         
-        self.rgb_bias = self.add_weight(name='ToRGB/bias', shape=(3,), 
+        self.rgb_bias = self.add_weight(name='ToRGB_bias', shape=(3,), 
                                         initializer=tf.random_normal_initializer(0, 1), trainable=True)
         
     def call(self, x, dlatent_vect, y):
