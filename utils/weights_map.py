@@ -13,7 +13,7 @@ mapping_weights = [ 'Dense0/weight', 'Dense0/bias',
                     'Dense7/weight', 'Dense7/bias']
 
 def get_synthesis_name_weights(resolution):
-    synthesis_weights = ['4x4/Const/const',
+    synthesis_weights = ['4x4_Const_const',
                          '4x4/Conv/noise_strength',
                          '4x4/Conv/bias',
                          '4x4/Conv/mod_bias',

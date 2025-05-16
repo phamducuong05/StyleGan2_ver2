@@ -78,7 +78,7 @@ class SynthesisNetwork(tf.keras.layers.Layer):
     def build(self, input_shape):
         
         #constant layer
-        self.const_4_4 = self.add_weight(name='4x4/Const/const', shape=(1, 512, 4, 4), 
+        self.const_4_4 = self.add_weight(name='4x4_Const_const', shape=(1, 512, 4, 4), 
                                         initializer=tf.random_normal_initializer(0, 1), trainable=True)
         #early layer 4x4
         self.layer_4_4 = SynthesisMainLayer(fmaps=nf(1), impl=self.impl, gpu=self.gpu, name='4x4')
